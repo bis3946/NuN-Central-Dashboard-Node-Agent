@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NuN Central Dashboard</title>
+    <link rel="stylesheet" href="index.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.14.0"
+        }
+      }
+    </script>
+    <script type="module" src="index.tsx"></script>
+  </head>
+  <body>
+    <header>
+      <h1>NuN Central Dashboard</h1>
+    </header>
+    <main>
+      <section class="summary-grid" aria-label="System Summary">
+        <div class="card">
+          <h2>Compliance Score</h2>
+          <p class="metric">98.5%</p>
+        </div>
+        <div class="card">
+          <h2>Active Nodes</h2>
+          <p class="metric">1 / 1</p>
+        </div>
+      </section>
+
+      <section class="chat-container" aria-labelledby="chat-heading">
+        <h2 id="chat-heading">AI Assistant</h2>
+        <div id="chat-history" role="log" aria-live="polite"></div>
+        <form id="prompt-form">
+          <label for="prompt-input" class="sr-only">Enter your command</label>
+          <input
+            id="prompt-input"
+            type="text"
+            placeholder="e.g., What is the status of ana-agi-node-1?"
+            aria-label="Chat input"
+            required
+          />
+          <button type="submit" aria-label="Send message">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
+              />
+            </svg>
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <div id="modal-overlay" class="modal-overlay hidden"></div>
+    <div id="confirmation-modal" class="modal-content hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title">Confirm Action</h2>
+      <div id="modal-body">
+        <p>Are you sure you want to proceed?</p>
+      </div>
+      <div class="modal-actions">
+        <button id="modal-cancel-btn" class="button-cancel">Cancel</button>
+        <button id="modal-confirm-btn" class="button-confirm">Confirm</button>
+      </div>
+    </div>
+  </body>
+</html>

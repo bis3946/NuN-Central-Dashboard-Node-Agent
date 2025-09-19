@@ -1,0 +1,5 @@
+{
+  "name": "NuN Central Dashboard with AI Assistant",
+  "description": "An interactive dashboard to monitor system status and perform actions using a natural language AI assistant powered by Gemini function calling.",
+  "requestFramePermissions": []
+}
